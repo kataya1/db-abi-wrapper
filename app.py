@@ -1,3 +1,4 @@
+from typing import final
 from model import table, db
 class employee:
     employee_list = {}
@@ -120,16 +121,23 @@ def main():
         
     }
     def game():
+        
         print('hello there\nhere is what you can do:\n\t\t\t\t\t\tkeywords\n"hire": hire new employee enter\t"transfer": transfer employee to another department\t"fire": you know what it does\t"list": list info about all employees')
         userin = input('\nso what\'re you gonna do? ')
+        quit_flag = 0
         if userin in menu:
-            quit_flag = menu[userin]()
+            try:    
+                quit_flag = menu[userin]()
+            except Exception as e:
+                print(e)
         if quit_flag == 1:
             print('bye')
             return
         else:
             print("-------------------------------------------\n")
             return game()
+
+
     game()
 
 if __name__ == '__main__':

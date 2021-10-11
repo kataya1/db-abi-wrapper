@@ -10,8 +10,8 @@ steps
 2. initialization
     - >virtualenv <virtual_env_name> 
     - source <virtual_env_name> /bin/activate
-    - pip3 install psycopg2 (if there is an error with headers: sudo apt install libpq-dev )
-3. 
+    - pip3 install -r requirement.txt
+3. run app.py
 
 
 
